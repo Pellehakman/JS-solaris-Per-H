@@ -7,6 +7,7 @@
     
     --fs-s: 11px;
     --fs-m: 2rem;
+    --fs-m2: 1.2rem;
     --fs-l: 4rem;
     --fs-xl: 45px;
 
@@ -41,86 +42,197 @@
     
     
 }
-.header{
+.main--header{
     position: absolute;
     top: 5rem;
     right: 10rem;
 }
 
-.header h1{
+.h1{
     font-family: var(--ff-secular);
     font-size: var(--fs-l);
     font-weight: var(--fw-m);
     color: var(--bg-white);
-    letter-spacing: .5rem;
-    text-align: end;
-    
+    letter-spacing: .5rem;   
 }
 
-.header h2{
+.h2{
     font-family: var(--ff-lora);
     font-size: var(--fs-m);
     font-weight: var(--fw-m);
     color: var(--bg-yellow);
-    letter-spacing: .5rem;
-    
+    letter-spacing: .5rem;      
+}
+
+.main--header-h1{
     text-align: end;
 }
 
-
+.main--header-h2{
+    text-align: end;
+}
 .planets-wrapper{
+    justify-content: center;
+    align-items: center; 
     
+}
+.hide{
+    display: none;
+}
+
+
+
+
+
+/* ----------------------OVERLAY START --------------------*/
+
+.info--container{
+    width: 100%;
+    height: 100%;
+    position: absolute;    
+    /* backdrop-filter: blur(.3rem); */
     justify-content: center;
     align-items: center;
     
-
+    
+    animation: aoverlayin .5s infinite ;
+}
+@keyframes overlayin {
+    0%   {margin-left: 200rem;}
+    100% {margin-left: 0 ;}
 }
 
-.info-overlay{
-    width: 80rem;
-    height: 50rem;
-    position: absolute;
-    background-color: #0c164d52;
-    filter: 50rem;
+
+
+.info--overlay{
+    justify-content: center;    
+    flex-direction: column;
+    width: 60rem;
+    height: 50rem;    
+    padding: 0 11rem 0 11rem;
+    
 }
+
+.info--header{
+    margin-bottom: 2rem;
+}
+
+.info--overlay-h1{    
+    text-align: start;
+}
+
+.info--overlay-h1{
+    text-align: start;
+}
+
+.info--ariticle{
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ffffff;
+}
+.info--ariticle-p{
+    font-family: var(--ff-roboto);
+    font-weight: var(--fw-m);
+    color: var(--bg-white);
+    line-height: 1.6rem;
+}
+
+.overlay--stats{
+    justify-content: center;
+    background-color: #7c3a3a;
+    width: 100%;
+    height: 100%;
+}
+
+.stats--container-top{
+    margin-top: 2rem;
+    flex-direction: column;
+    height: 20%;
+    width: 100%;
+}
+
+.stats--container-bottom{
+    border-top: 1px solid #ffffff;
+    padding-top: 2rem;
+    flex-direction: column;
+    height: 20%;
+    width: 100%;   
+    
+}
+.container--top{        
+    width: 100%;
+    height: 100%;
+}
+
+.container--mid{    
+    width: 100%;
+    height: 100%;    
+}
+
+.container--bottom{
+     width: 100%;
+    height: 100%;
+}
+
+.stats{
+    flex-direction: column;    
+    flex: 1;
+
+}
+ .stats-h3{
+     font-family: var(--ff-secular);
+     font-weight: var(--fw-s);
+     font-size: var(--fs-m2);
+     color: var(--bg-white);
+     letter-spacing: .3rem;
+ }
+
+ .stats--result{
+    font-family: var(--ff-roboto);
+    font-weight: var(--fw-m);
+    color: var(--bg-white);
+    
+
+ }
+ .result{
+    letter-spacing: .2rem;
+ }
 
 .planets-container{
     width: 100vw;
     gap: 4rem;
+    animation: aswosh .5s infinite ;
 }
+@keyframes swosh {
+    0%   {margin-left: 0;}
+    100% {margin-left: -200rem;}
+}
+
+
 
 .sun{
     height: 100%;
 }
-
-.mercury{
-    
+.mercury{    
     width: 20px;
 }
-
 .venus{
     width: 30px;
 }
-
 .earth{
     width: 32px;
 }
 .mars{
     width: 18px;
 }
-
 .jupiter{
     width: 211px;
 }
-
 .saturn{
     width: 200px;
 }
-
 .uranus{
     width: 90px;
 }
-
 .neptune{
     width: 71px;
 }
