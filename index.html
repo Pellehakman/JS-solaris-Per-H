@@ -9,26 +9,101 @@
 </head>
 <body class="flex body">
 
-    <header class="header">
-        <h1>SOLSYSTEMET</h1>
-        <h2>SOLARIS</h2>  
+    <header class="main--header">
+        
+        <h1  class="h1 main--header-h1">SOLSYSTEMET</h1>
+        <h2 class="h2 main--header-h2">SOLARIS</h2>  
 
     </header>
 
-    <div class="flex info-overlay"></div>
+    <div class="flex info--container hide">
+
+        <div class="flex info--overlay">
+            <header class="info--header">
+                <h1 class="h1 info--overlay-h1" data-name></h1>
+                <h2 class="h2 info--overlay-h2" data-latinName></h2>
+
+            </header>
+
+            
+            <article class="info--ariticle">
+                <p class="info--ariticle-p" data-desc>
+                    
+                </p>
+                
+            </article>
+
+            <div class="flex stats--container-top">
+
+                <div class="flex container--top">
+                    <div class="flex stats box-1">                          
+                        <span class="stats-h3">OMKRETS</span> 
+                        <span class="stats--result"> 
+                            <span class="result" data-circumference></span> 
+                            <span> km</span>
+                        </span>                                    
+                    </div>
+                    <div class="flex stats box-2"> 
+                        <h3 class="stats-h3">KM FRÅN SOLEN</h3> 
+                        <span class="stats--result"> 
+                            <span class="result" data-distance></span> 
+                            <span> km</span>
+                        </span>                    
+                    </div>                    
+                </div>
+
+                <div class="flex container--mid">
+
+
+                    <div class="flex stats box-3">
+                        <h3 class="stats-h3">MAX TEMPERATUR</h3> 
+                        <span class="stats--result"> 
+                            <span class="result" data-day></span> 
+                            <span> °C</span>
+                        </span> 
+                    </div>
+
+                    <div class="flex stats box-4">
+                        <h3 class="stats-h3">MIN TEMPERATUR</h3> 
+                        <span class="stats--result"> 
+                            <span class="result" data-night></span> 
+                            <span> °C</span>
+                        </span> 
+                    </div>                   
+                </div>
+            </div>   
+                
+            <div class="flex stats--container-bottom">
+
+                <div class="flex container--bottom">                    
+                    <div class="flex stats box-5">                          
+                        <span class="stats-h3">MÅNAR</span> 
+                        <span class="stats--result"> 
+                            <span class="result" data-moons></span> 
+                            
+                        </span>                                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    
 
     <div class="flex planets-container">
-        <img class="flex planet sun" src="/Pics/sun.svg" alt="">
-        <img class="flex planet mercury" src="/Pics/mercurismercury.svg" alt="">
-        <img class="flex planet venus"src="/Pics/venusvenus.svg" alt="">
-        <img class="flex planet earth" src="/Pics/earthearth.svg" alt="">
-        <img class="flex planet mars" src="/Pics/marsmars.svg" alt="">
-        <img class="flex planet jupiter" src="/Pics/jupiterjupiter.svg" alt="">
-        <img class="flex planet saturn" src="/Pics/Vectorsaturn.svg" alt="">
-        <img class="flex planet uranus" src="/Pics/Uranusuranus.svg" alt="">
-        <img class="flex planet neptune" src="/Pics/neptunusneptunus.svg" alt="">
-
+        <img class="flex planet sun" id="sun" src="/Pics/sun.svg" alt="">
+        <img class="flex planet mercury" id="mercury" src="/Pics/mercurismercury.svg" alt="">
+        <img class="flex planet venus" id="venus" src="/Pics/venusvenus.svg" alt="">
+        <img class="flex planet earth" id="earth" src="/Pics/earthearth.svg" alt="">
+        <img class="flex planet mars" id="mars" src="/Pics/marsmars.svg" alt="">
+        <img class="flex planet jupiter" id="jupiter" src="/Pics/jupiterjupiter.svg" alt="">
+        <img class="flex planet saturn" id="saturn" src="/Pics/Vectorsaturn.svg" alt="">
+        <img class="flex planet uranus" id="uranus" src="/Pics/Uranusuranus.svg" alt="">
+        <img class="flex planet neptune" id="neptune" src="/Pics/neptunusneptunus.svg" alt="">
     </div>
-</div>
+
 </body>
 </html>
