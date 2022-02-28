@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Condensed:wght@300&family=Secular+One&display=swap');
+:root{
+   
+    --bg-yellow: #FFD029;
+    --bg-white: #ffffff;
+    --bg-black: #000000;
+    
+    --fs-s: 11px;
+    --fs-m: 2rem;
+    --fs-l: 4rem;
+    --fs-xl: 45px;
+
+    --fw-s: 200;
+    --fw-m: 300;
+    --fw-l: 500;
+    --fw-xl: 900;
+
+    --ff-lora: 'Lora';
+    --ff-secular: 'Secular One';
+    --ff-roboto: 'Roboto Condensed'
+}
+    
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.flex{
+    display: flex;
+}
+
+.body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(269.84deg, #0C164D 0.11%, #190B22 99.83%);
+    background-repeat: no-repeat;
+    justify-content: center;
+    overflow: hidden;
+    
+    
+    
+}
+.header{
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+}
+
+.header h1{
+    font-family: var(--ff-secular);
+    font-size: var(--fs-l);
+    font-weight: var(--fw-m);
+    color: var(--bg-white);
+    letter-spacing: .5rem;
+    text-align: end;
+    
+}
+
+.header h2{
+    font-family: var(--ff-lora);
+    font-size: var(--fs-m);
+    font-weight: var(--fw-m);
+    color: var(--bg-yellow);
+    letter-spacing: .5rem;
+    
+    text-align: end;
+}
+
+
+.planets-wrapper{
+    
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.info-overlay{
+    width: 80rem;
+    height: 50rem;
+    position: absolute;
+    background-color: #0c164d52;
+    filter: 50rem;
+}
+
+.planets-container{
+    width: 100vw;
+    gap: 4rem;
+}
+
+.sun{
+    height: 100%;
+}
+
+.mercury{
+    
+    width: 20px;
+}
+
+.venus{
+    width: 30px;
+}
+
+.earth{
+    width: 32px;
+}
+.mars{
+    width: 18px;
+}
+
+.jupiter{
+    width: 211px;
+}
+
+.saturn{
+    width: 200px;
+}
+
+.uranus{
+    width: 90px;
+}
+
+.neptune{
+    width: 71px;
+}
