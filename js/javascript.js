@@ -19,49 +19,74 @@ const dayElem = document.querySelector('[data-day]')
 const nigthElem = document.querySelector('[data-night]')
 const moonElem = document.querySelector('[data-moons]')
 const displayOverlay = document.querySelector('.info--container');
-
-
-
-
-
-function displayData(data){ 
-
-
-    const temp = data.temp
-    const moons = data.moons
-    nameElem.textContent = data.name
-    latinElem.textContent = data.latinName
-    descElem.textContent = data.desc
-    circElem.textContent = data.circumference
-    distElem.textContent = data .distance
-    dayElem.textContent = temp.day
-    nigthElem.textContent = temp.night
-    moonElem.textContent = moons
-}
-
-function sun(sunData){
-    console.log(sunData)
-}
-
-
-
+const planetsOverlay = document.querySelector('.planets-container');
 
 async function getBodies(API_KEY){    
-    let resp = await fetch('https://fathomless-shelf-54969.herokuapp.com/bodies', {
+    let secondResponse = await fetch('https://fathomless-shelf-54969.herokuapp.com/bodies', {
     method: 'GET',
-    headers: {'x-zocom': `${API_KEY}`}
-});
+    headers: {'x-zocom': `${API_KEY}`}});
+    const bodies = await secondResponse.json()
+
+    addEventListener('click', (event) =>{
+        if (event.target.id === 'sun'){            
+            let data = bodies.bodies[0]
+            displayData(data)
+        }
+
+        if (event.target.id === 'mercury'){            
+            let data = bodies.bodies[1]
+            displayData(data)
+        }
+
+        if (event.target.id === 'venus'){            
+            let data = bodies.bodies[2]
+            displayData(data)
+        }
+
+        if (event.target.id === 'earth'){            
+            let data = bodies.bodies[3]
+            displayData(data)
+        }
+
+        if (event.target.id === 'mars'){            
+            let data = bodies.bodies[4]
+            displayData(data)
+        }
+
+        if (event.target.id === 'jupiter'){            
+            let data = bodies.bodies[5]
+            displayData(data)
+        }
+
+        if (event.target.id === 'saturn'){            
+            let data = bodies.bodies[6]
+            displayData(data)
+        }
+
+        if (event.target.id === 'uranus'){            
+            let data = bodies.bodies[7]
+            displayData(data)
+        }
+
+        if (event.target.id === 'neptune'){            
+            let data = bodies.bodies[8]
+            displayData(data)
+        }
+        
+        
+        
 
 
-const bodies = await resp.json()
-let sunData = bodies.bodies[0]
-sun(sunData)
-
-
+    }
+    
+    )
 
     
-    };
 
+      
+    
+    
+};
 
 async function getApi(){
     let response = await fetch(`${BASE_URL}keys`, {
@@ -72,24 +97,32 @@ async function getApi(){
 }
 
 
-addEventListener('click', (event) =>{
-    
-    let ID = event.target.id
-
-    if (ID == 'sun'){
-
-        let numb = 0        
-
-        
-        console.log(0)} 
-
-        if( ID === 'mercury') 
-        console.log(1)
 
 
 
 
-        displayOverlay.classList.remove('hide')
-        getApi()
+function displayData(data){ 
 
-})
+    const temp = data.temp
+    const moons = data.moons
+    nameElem.textContent = data.name
+    latinElem.textContent = data.latinName
+    descElem.textContent = data.desc
+    circElem.textContent = data.circumference
+    distElem.textContent = data.distance
+    dayElem.textContent = temp.day
+    nigthElem.textContent = temp.night
+    moonElem.textContent = moons
+}
+
+
+getApi()
+
+
+
+addEventListener('click', () =>{
+displayOverlay.classList.toggle('hide') 
+planetsOverlay.classList.toggle('hide')   
+
+});
+
