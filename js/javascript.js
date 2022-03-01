@@ -1,7 +1,5 @@
 const BASE_URL = `https://fathomless-shelf-54969.herokuapp.com/`
 
-
-
 const sunBtn = document.querySelector('#sun')
 const mercurisBtn = document.querySelector('#mercuris')
 const venusBtn = document.querySelector('#venus')
@@ -20,13 +18,14 @@ const distElem = document.querySelector('[data-distance]')
 const dayElem = document.querySelector('[data-day]')
 const nigthElem = document.querySelector('[data-night]')
 const moonElem = document.querySelector('[data-moons]')
-
 const displayOverlay = document.querySelector('.info--container');
 
 
 
 
-function displayData(data){    
+
+function displayData(data){ 
+
 
     const temp = data.temp
     const moons = data.moons
@@ -40,6 +39,9 @@ function displayData(data){
     moonElem.textContent = moons
 }
 
+function sun(sunData){
+    console.log(sunData)
+}
 
 
 
@@ -49,73 +51,45 @@ async function getBodies(API_KEY){
     method: 'GET',
     headers: {'x-zocom': `${API_KEY}`}
 });
+
+
 const bodies = await resp.json()
-// choosePlanet(bodies)
-clickPlanet(bodies)};
+let sunData = bodies.bodies[0]
+sun(sunData)
+
+
+
+    
+    };
 
 
 async function getApi(){
     let response = await fetch(`${BASE_URL}keys`, {
-        method: 'POST'});
+    method: 'POST'});
     const dataKey = await response.json()
     let API_KEY = dataKey.key   
     getBodies(API_KEY)  
 }
 
-// function clickPlanet(){
 
-//     addEventListener('click', (event) =>{   
-
-//         if (event.target.id === 'sun'){ 
-//             displayOverlay.classList.remove('hide')
-//             getApi()}
-//         })
-//     }
-
-
-function clickPlanet(){   
-
-    addEventListener('click', (event) =>{  
-        if (event.target.id == 'sun'){
-            let numb = `0` 
-        }
-
-              
-
-            displayOverlay.classList.remove('hide')
-            getApi()
-
-            
-            let data = bodies.bodies[`${numb}`]
-            displayData(data) 
-
-            
-        }
-)
-
-
-
-}
-
-
+addEventListener('click', (event) =>{
     
+    let ID = event.target.id
 
-    // function choosePlanet(bodies){
+    if (ID == 'sun'){
 
-    //     let data = bodies.bodies[0]
-               
-    // }
-    
+        let numb = 0        
 
-    clickPlanet()
+        
+        console.log(0)} 
 
-
-
-
-  
-   
-    
+        if( ID === 'mercury') 
+        console.log(1)
 
 
 
 
+        displayOverlay.classList.remove('hide')
+        getApi()
+
+})
