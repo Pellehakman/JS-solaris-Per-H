@@ -26,13 +26,15 @@ const displayOverlay = document.querySelector('.info--container');
 
 
 
-function displayData(bodies, temp, moons){
-    
-    nameElem.textContent = bodies.name
-    latinElem.textContent = bodies.latinName
-    descElem.textContent = bodies.desc
-    circElem.textContent = bodies.circumference
-    distElem.textContent = bodies.distance
+function displayData(data){    
+
+    const temp = data.temp
+    const moons = data.moons
+    nameElem.textContent = data.name
+    latinElem.textContent = data.latinName
+    descElem.textContent = data.desc
+    circElem.textContent = data.circumference
+    distElem.textContent = data .distance
     dayElem.textContent = temp.day
     nigthElem.textContent = temp.night
     moonElem.textContent = moons
@@ -47,14 +49,9 @@ async function getBodies(API_KEY){
     method: 'GET',
     headers: {'x-zocom': `${API_KEY}`}
 });
-
 const bodies = await resp.json()
-
-choosePlanet(bodies)
-
-
-    
-};
+// choosePlanet(bodies)
+clickPlanet(bodies)};
 
 
 async function getApi(){
@@ -65,42 +62,52 @@ async function getApi(){
     getBodies(API_KEY)  
 }
 
+// function clickPlanet(){
 
-function click(){
+//     addEventListener('click', (event) =>{   
+
+//         if (event.target.id === 'sun'){ 
+//             displayOverlay.classList.remove('hide')
+//             getApi()}
+//         })
+//     }
 
 
+function clickPlanet(){   
 
+    addEventListener('click', (event) =>{  
+        if (event.target.id == 'sun'){
+            let numb = `0` 
+        }
 
-    
-}
+              
 
-addEventListener('click', (event) =>{    
-        if (event.target.id === 'sun'){ 
-            let numb = [0]
-            choosePlanet(numb)
-                   
-            
             displayOverlay.classList.remove('hide')
             getApi()
+
+            
+            let data = bodies.bodies[`${numb}`]
+            displayData(data) 
+
             
         }
-    })
+)
+
+
+
+}
+
 
     
 
-    function choosePlanet(bodies, numb){
+    // function choosePlanet(bodies){
 
-        console.log(numb)
+    //     let data = bodies.bodies[0]
+               
+    // }
+    
 
-        
-        const data = bodies.bodies[`${numb}`]
-        const temp = data.temp
-        const moons = data.moons
-    
-        displayData(data, temp, moons)
-        
-    }
-    
+    clickPlanet()
 
 
 
