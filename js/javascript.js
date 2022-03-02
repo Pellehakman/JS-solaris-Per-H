@@ -72,6 +72,8 @@ async function getBodies(API_KEY){
             let data = bodies.bodies[8]
             displayData(data)
         }
+
+      
         
         
         
@@ -122,7 +124,7 @@ getApi()
 
 addEventListener('click', () =>{
 displayOverlay.classList.toggle('hide') 
-planetsOverlay.classList.toggle('hide')   
+// planetsOverlay.classList.toggle('hide')   
 
 });
 
