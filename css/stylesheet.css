@@ -7,7 +7,7 @@
     
     --fs-s: 11px;
     --fs-m: 2rem;
-    --fs-m2: 1.2rem;
+    --fs-m2: 1.1rem;
     --fs-l: 4rem;
     --fs-xl: 45px;
 
@@ -26,7 +26,24 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
+
+::-webkit-scrollbar {
+  height: 4px;  
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f134; 
+  border-radius: 30px;
+} 
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255); 
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .flex{
     display: flex;
 }
@@ -37,11 +54,9 @@
     background: linear-gradient(269.84deg, #0C164D 0.11%, #190B22 99.83%);
     background-repeat: no-repeat;
     justify-content: center;
-    overflow: hidden;
-    
-    
-    
+    overflow: hidden;   
 }
+
 .main--header{
     position: absolute;
     top: 5rem;
@@ -81,26 +96,17 @@
     display: none;
 }
 
-
-
-
-
 /* ----------------------OVERLAY START --------------------*/
 
 .info--container{
     width: 100%;
     height: 100%;
     position: absolute;    
-    backdrop-filter: blur(.9rem);
+    /* backdrop-filter: blur(.9rem); */
     justify-content: center;
-    align-items: center;    
-    
+    align-items: center;   
+    backdrop-filter: blur(.3rem); 
 }
-
-
-
-
-
 
 .info--overlay{
     justify-content: center;    
@@ -108,7 +114,45 @@
     width: 60rem;
     height: 50rem;    
     padding: 0 11rem 0 11rem;
-    
+    animation: opacity .3s  forwards; 
+    transition: 1s ;    
+}
+
+@keyframes opacity {
+    0% 
+    { opacity: 0%;
+       
+    }
+    100% { opacity: 100%;        
+    }    
+}
+
+.exit{   
+justify-content: flex-end;
+   
+
+}
+.btn{
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
+    border-radius: 500px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ad3030;
+    border: none;
+    color: var(--bg-white);
+    font-family: var(--ff-secular);
+    font-weight: var(--fw-m);
+    font-size: 2rem;
+    text-decoration: none;
+   
+}
+
+.btn:hover{
+    transition: .2s;
+    background-color: var(--bg-white);
+    color: var(--bg-black);
 }
 
 .info--header{
@@ -130,6 +174,7 @@
 .info--ariticle-p{
     font-family: var(--ff-roboto);
     font-weight: var(--fw-m);
+    font-size: var(--fs-m2);
     color: var(--bg-white);
     line-height: 1.6rem;
 }
@@ -167,8 +212,8 @@
 }
 
 .container--bottom{
-     width: 100%;
-    height: 100%;
+    width: 100%;
+    height: 100%; 
     
     
 }
@@ -190,17 +235,31 @@
     font-family: var(--ff-roboto);
     font-weight: var(--fw-m);
     color: var(--bg-white);
-    
-    
-    
 
  }
+
+.mone{
+    width: 38rem; 
+
+    
+    overflow-y: hidden;
+    
+    
+    
+    
+}
+
  .result{
+       
     letter-spacing: .2rem;
+    padding-bottom: 2rem;
+    
+    
  }
 
 .planets-container{
     width: 100vw;
+    height: 100vh;
     align-items: center;
     justify-content: space-between;
     padding-right: 20rem    ;
@@ -212,12 +271,14 @@
 
 
 .sun{
-    height: 100%    
+    width: 300px;    
 }
 
 .mercury{    
     width: 20px;  
+    
 }
+
 
 .venus{
     width: 30px;    
