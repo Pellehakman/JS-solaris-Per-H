@@ -19,8 +19,10 @@
     <div class="flex info--container hide">
         <!-- hide above -->
 
-        <div class="flex info--overlay">
+        <div class="flex info--overlay"> 
+            <div class="flex exit"> <a class="flex btn" id="exit" href="#exit">x</a></div>
             <header class="info--header">
+                
                 <h1 class="h1 info--overlay-h1" data-name></h1>
                 <h2 class="h2 info--overlay-h2" data-latinName></h2>
 
@@ -72,27 +74,20 @@
                         </span> 
                     </div>                   
                 </div>
-            </div>   
+            </div>  
                 
-            <div class="flex stats--container-bottom">
-
+            <div class="flex stats--container-bottom">  
                 <div class="flex container--bottom">                    
                     <div class="flex stats box-5">                          
-                        <span class="stats-h3">MÅNAR</span> 
-                        <span class="stats--result"> 
-                            <span class="flex result" data-moons></span> 
-                            
+                        <h3 class="stats-h3">MÅNAR</h3> 
+                        <span class="flex stats--result"> 
+                            <span><p class="flex mone result" data-moons></p> </span>                            
                         </span>                                    
-                    </div>
-                    
+                    </div>                    
                 </div>
             </div>
         </div>
     </div>
-
-   
-
-    
 
     <div class="flex planets-container" id="planetscontainer">
         <a href="#sun"><img class="flex planet sun" id="sun" src="/Pics/sun.svg" alt=""></a>
