@@ -20,6 +20,8 @@ const nigthElem = document.querySelector('[data-night]')
 const moonElem = document.querySelector('[data-moons]')
 const displayOverlay = document.querySelector('.info--container');
 const planetsOverlay = document.querySelector('.planets-container');
+const shutBtn = document.querySelector('#exit')
+
 
 async function getBodies(API_KEY){    
     let secondResponse = await fetch('https://fathomless-shelf-54969.herokuapp.com/bodies', {
@@ -28,68 +30,60 @@ async function getBodies(API_KEY){
     const bodies = await secondResponse.json()
 
     addEventListener('click', (event) =>{
-        if (event.target.id === 'sun'){            
+        if (event.target.id === 'sun'){   
+            displayOverlay.classList.toggle('hide') 
             let data = bodies.bodies[0]
             displayData(data)
         }
 
-        if (event.target.id === 'mercury'){            
+        if (event.target.id === 'mercury'){    
+            displayOverlay.classList.toggle('hide')          
             let data = bodies.bodies[1]
             displayData(data)
         }
 
-        if (event.target.id === 'venus'){            
+        if (event.target.id === 'venus'){  
+            displayOverlay.classList.toggle('hide')            
             let data = bodies.bodies[2]
             displayData(data)
         }
 
-        if (event.target.id === 'earth'){            
+        if (event.target.id === 'earth'){       
+            displayOverlay.classList.toggle('hide')       
             let data = bodies.bodies[3]
             displayData(data)
         }
 
-        if (event.target.id === 'mars'){            
+        if (event.target.id === 'mars'){    
+            displayOverlay.classList.toggle('hide')          
             let data = bodies.bodies[4]
             displayData(data)
         }
 
-        if (event.target.id === 'jupiter'){            
+        if (event.target.id === 'jupiter'){    
+            displayOverlay.classList.toggle('hide')          
             let data = bodies.bodies[5]
             displayData(data)
         }
 
-        if (event.target.id === 'saturn'){            
+        if (event.target.id === 'saturn'){  
+            displayOverlay.classList.toggle('hide')            
             let data = bodies.bodies[6]
             displayData(data)
         }
 
-        if (event.target.id === 'uranus'){            
+        if (event.target.id === 'uranus'){   
+            displayOverlay.classList.toggle('hide')           
             let data = bodies.bodies[7]
             displayData(data)
         }
 
-        if (event.target.id === 'neptune'){            
+        if (event.target.id === 'neptune'){   
+            displayOverlay.classList.toggle('hide')           
             let data = bodies.bodies[8]
             displayData(data)
         }
-        
-
-      
-        
-        
-        
-
-
-    }
-    
-    )
-
-    
-
-      
-    
-    
-};
+})};
 
 async function getApi(){
     let response = await fetch(`${BASE_URL}keys`, {
@@ -99,13 +93,8 @@ async function getApi(){
     getBodies(API_KEY)  
 }
 
-
-
-
-
-
 function displayData(data){ 
-
+    console.log(data)
     const temp = data.temp
     const moons = data.moons
     nameElem.textContent = data.name
@@ -114,18 +103,15 @@ function displayData(data){
     circElem.textContent = data.circumference
     distElem.textContent = data.distance
     dayElem.textContent = temp.day
-    nigthElem.textContent = temp.night
+    nigthElem.textContent = temp.night    
     moonElem.textContent = moons
-}
+}      
+      
 
+
+shutBtn.addEventListener('click', () =>{
+    displayOverlay.classList.toggle('hide')  
+
+})
 
 getApi()
-
-
-
-addEventListener('click', () =>{
-displayOverlay.classList.toggle('hide') 
-// planetsOverlay.classList.toggle('hide')   
-
-});
-
