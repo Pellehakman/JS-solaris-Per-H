@@ -22,7 +22,6 @@ const displayOverlay = document.querySelector('.info--container');
 const planetsOverlay = document.querySelector('.planets-container');
 const shutBtn = document.querySelector('#exit')
 
-
 async function getBodies(API_KEY){    
     let secondResponse = await fetch('https://fathomless-shelf-54969.herokuapp.com/bodies', {
     method: 'GET',
@@ -105,10 +104,8 @@ function displayData(data){
     dayElem.textContent = temp.day
     nigthElem.textContent = temp.night    
     moonElem.textContent = moons
-}      
+}     
       
-
-
 shutBtn.addEventListener('click', () =>{
     displayOverlay.classList.toggle('hide')  
 
